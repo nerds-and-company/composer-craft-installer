@@ -1,0 +1,5 @@
+# Ignore me once, shame on me. Ignore me twice...
+build/logs/
+vendor/
+phpunit.xml
+composer.lock
