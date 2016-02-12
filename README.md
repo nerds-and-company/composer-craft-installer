@@ -20,8 +20,8 @@ plugins.
 For this plugin to work, three things are needed:
     
  - a Craft repository 
- - An entry in the Craft repository's `composer.json` that states: `"type":"craft-library"`
- - An entry that requires the Craft repository
+ - Entries in the Craft repository's `composer.json`
+ - An entry in a project's §composer.json§ that requires the Craft repository
 
 ### Craft repository
 
@@ -34,25 +34,31 @@ purposes, as long as you don't share the code-base publicly.
 
 Once a Craft repository has been made available, make sure it has a valid 
 `composer.json` file. For this installer to be used, the `type` entry has to be 
-set to `craft-library`. A minimal case would be:
+set to `craft-library` and the `nerds-and-company/composer-craft-installer` 
+package needs to be `require`'d.
+
+A minimal case would be:
 
     {
         "name": "acme-corp/craft",
         "description": "Acme Corp. Craft Repository",
         "license": "proprietary",
-        "type": "craft-library"
+        "type": "craft-library",
+        "require": {
+            "nerds-and-company/composer-craft-installer": "~0.1"
+        }
     }
     
 ### Project Composer entry
 
-All that is left now, is to require the Craft repository from a specific project:
+All that is left now, is to require the Craft repository from a specific project's
+`composer.json`:
 
     {
         "name": "acme-corp/my-craft-based-project",
         "description": "Another Acme Corp. Production",
         "license": "proprietary",
-          "require": {
-            "nerds-and-company/composer-craft-installer": "~0.1",
+        "require": {
             "acme-corp/craft": "~2.5"
         }
     }
