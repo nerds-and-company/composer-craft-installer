@@ -1,0 +1,41 @@
+{
+    "name": "nerds-and-company/composer-craft-installer",
+    "description": "Install Craft using Composer",
+    "keywords": ["craft", "plugin", "composer", "installer", "plugin-installer", "composer-plugin"],
+    "license": "MIT",
+    "type": "composer-plugin",
+    "authors": [
+        {
+            "name": "Nerds & Company - Craft Plugin Team",
+            "email": "craft-plugins@nerds.company",
+            "homepage": "http://github.com/nerds-and-company",
+            "role": "Maintainer"
+        }
+    ],
+    "require": {
+        "php": ">=5.5",
+        "composer-plugin-api": "~1.0"
+    },
+    "require-dev": {
+        "composer/composer": "~1.0@dev",
+        "phpunit/phpunit": "~4.8",
+        "psr/log": "~1",
+        "whatthejeff/nyancat-phpunit-resultprinter": "~1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "NerdsAndCompany\\Composer\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "NerdsAndCompany\\Composer\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "extra": {
+        "class": "NerdsAndCompany\\Composer\\Plugin\\CraftPlugin"
+    }
+}
