@@ -52,7 +52,7 @@ All that is left now, is to require the Craft repository from a specific project
         "description": "Another Acme Corp. Production",
         "license": "proprietary",
           "require": {
-            "nerds-and-company/craft-installer": "~0.1",
+            "nerds-and-company/composer-craft-installer": "~0.1",
             "acme-corp/craft": "~2.5"
         }
     }
